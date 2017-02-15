@@ -2,9 +2,6 @@ package algorytmy.sort;
 
 import java.util.Arrays;
 
-/**
- * Created by RENT on 2017-02-14.
- */
 public class CountingSort {
     public static void main(String[] args) {
         CountingSort countingSort = new CountingSort();
