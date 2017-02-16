@@ -1,11 +1,11 @@
-package algorytmy;
+package test.algorytmy.structures;
 
 import algorytmy.structures.MyList;
 import algorytmy.structures.MyListInterface;
 
 import java.lang.reflect.Array;
 
-public class Application {
+public class MyListTests {
     public static void main(String[] args) {
         MyListInterface myList = initMyList();
         MyListInterface clonedList = myList.clone();
