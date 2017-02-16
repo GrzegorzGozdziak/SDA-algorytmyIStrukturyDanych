@@ -4,7 +4,7 @@ import algorytmy.sort.SortUtils;
 
 import java.util.Arrays;
 
-public class MyList {
+public class MyList implements MyListInterface {
     private int[] array;
     private int size;
     private final int INITIAL_SIZE = 10;
@@ -43,7 +43,7 @@ public class MyList {
         }
     }
 
-    public MyList clone() {
+    public MyListInterface clone() {
         MyList myList = new MyList();
         myList.array = rewrite(new int[this.array.length]);
         myList.size = this.size;
@@ -59,8 +59,20 @@ public class MyList {
 
     }
 
-    public void add(int index, int value){
-        if(checkIndex(index)){
+    public void addAll(MyListInterface mylist) {
+        for (int i = 0; i < mylist.getSize(); i++) {
+            this.add(mylist.get(i));
+        }
+    }
+
+    public void addAll(int index, MyListInterface myList) {
+        for (int i = 0; i < myList.getSize(); i++) {
+            add(index + i, myList.get(i));
+        }
+    }
+
+    public void add(int index, int value) {
+        if (checkIndex(index)) {
             if (this.size >= this.array.length) {
                 doubleCapacity();
             }
@@ -73,7 +85,7 @@ public class MyList {
     }
 
     public void put(int index, int value) {
-        if(checkIndex(index)){
+        if (checkIndex(index)) {
             this.array[index] = value;
         }
     }
@@ -96,7 +108,7 @@ public class MyList {
         stringBuilder.append("[");
         for (int i = 0; i < size; i++) {
             stringBuilder.append(array[i]);
-            if(i != size -1 ){
+            if (i != size - 1) {
                 stringBuilder.append(", ");
             }
         }
