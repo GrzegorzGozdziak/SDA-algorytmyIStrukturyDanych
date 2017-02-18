@@ -1,7 +1,7 @@
 package algorytmy.structures.queue;
 
 
-public class FIFOQueue implements Queue {
+public class FIFOQueue extends AbstractQueue{
 
     private int value;
 
