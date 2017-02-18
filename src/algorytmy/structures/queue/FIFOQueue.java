@@ -1,13 +1,9 @@
 package algorytmy.structures.queue;
 
 
-
-/**
- * Created by RENT on 2017-02-18.
- */
 public class FIFOQueue implements Queue {
 
-    private  int value;
+    private int value;
 
     private FIFOQueue next;
 
@@ -41,7 +37,7 @@ public class FIFOQueue implements Queue {
         FIFOQueue clonedQueue = new FIFOQueue();
         FIFOQueue returnQueue = clonedQueue;
         FIFOQueue tmpQueue = this.next;
-        while(tmpQueue != null) {
+        while (tmpQueue != null) {
             clonedQueue.next = new FIFOQueue(tmpQueue.value);
             tmpQueue = tmpQueue.next;
             clonedQueue = clonedQueue.next;
@@ -49,14 +45,6 @@ public class FIFOQueue implements Queue {
         return returnQueue;
     }
 
-    /*@Override
-    public MyListInterface clone() {
-        MyListInterface clonedList = new MyLinkedList();
-        for (int i = 0; i < this.getSize(); i++) {
-            clonedList.add(this.get(i));
-        }
-        return clonedList;
-    }*/
 
     private FIFOQueue getLast() {
         FIFOQueue myFifoQueue = this;
@@ -72,9 +60,9 @@ public class FIFOQueue implements Queue {
         stringBuilder.append("[");
 
         FIFOQueue fifoQueue = this.next;
-        while(fifoQueue != null) {
+        while (fifoQueue != null) {
             stringBuilder.append(fifoQueue.value);
-            if(fifoQueue.next != null) {
+            if (fifoQueue.next != null) {
                 stringBuilder.append(", ");
             }
             fifoQueue = fifoQueue.next;
