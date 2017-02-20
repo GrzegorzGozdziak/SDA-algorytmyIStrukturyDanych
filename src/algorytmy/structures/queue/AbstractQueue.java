@@ -1,6 +1,6 @@
 package algorytmy.structures.queue;
 
-public abstract class AbstractQueue implements Queue{
+public abstract class AbstractQueue implements Queue {
 
     protected int value;
 
@@ -31,7 +31,7 @@ public abstract class AbstractQueue implements Queue{
         AbstractQueue clonedQueue = getInstance();
         AbstractQueue toReturn = clonedQueue;
         AbstractQueue thisQueue = this.next;
-        while(thisQueue != null) {
+        while (thisQueue != null) {
             clonedQueue.next = new LIFOQueue(thisQueue.value);
             clonedQueue = clonedQueue.next;
             thisQueue = thisQueue.next;

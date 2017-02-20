@@ -31,6 +31,4 @@ public class LIFOQueue extends AbstractQueue {
     }
 
 
-
-
 }

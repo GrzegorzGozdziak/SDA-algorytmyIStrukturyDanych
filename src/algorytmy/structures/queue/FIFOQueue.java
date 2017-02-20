@@ -1,7 +1,7 @@
 package algorytmy.structures.queue;
 
 
-public class FIFOQueue extends AbstractQueue{
+public class FIFOQueue extends AbstractQueue {
 
     public FIFOQueue() {
     }
