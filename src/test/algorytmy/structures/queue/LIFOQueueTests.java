@@ -2,14 +2,19 @@ package test.algorytmy.structures.queue;
 
 import algorytmy.structures.queue.LIFOQueue;
 import algorytmy.structures.queue.Queue;
+import algorytmy.structures.queue.QueueException;
 
 /**
  * Created by RENT on 2017-02-18.
  */
-public class LILOQueueTests {
-    public static void main(String[] args) {
+public class LIFOQueueTests {
+    public static void main(String[] args)  {
         Queue queue = new LIFOQueue();
-        queue.pop();
+        try {
+            queue.pop();
+        } catch (QueueException e) {
+            e.printStackTrace();
+        }
         System.out.println();
 
         queue.push(3);
@@ -21,8 +26,8 @@ public class LILOQueueTests {
         Queue clonedQueue = queue.clone();
         System.out.println(clonedQueue);
 
-        System.out.println(queue.pop()); //poprawnosc pop
-        System.out.println(queue.pop()); //poprawnosc pop
+//        System.out.println(queue.pop()); //poprawnosc pop
+//        System.out.println(queue.pop()); //poprawnosc pop
         System.out.println(queue); //czy elelmenty zostaly usuniete
     }
 }

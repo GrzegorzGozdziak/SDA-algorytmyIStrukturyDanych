@@ -14,11 +14,10 @@ public abstract class AbstractQueue implements Queue {
     }
 
     @Override
-    public int pop() {
+    public int pop() throws QueueException {
         AbstractQueue nextValue = this.next;
         if (nextValue == null) {
-            System.out.println("Queue is empty");
-            return 0;
+            throw new QueueException("Queue is empty");
         }
         this.next = nextValue.next;
         nextValue.next = null;
